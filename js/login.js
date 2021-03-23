@@ -36,7 +36,7 @@ async function login(e){
     if(response.status !== 400){
         const token = await response.text();
         localStorage.setItem('token',token)
-        location.href ='/index.html'
+        location.href ='/chat.html'
     }
     else{
         const err = await response.json()

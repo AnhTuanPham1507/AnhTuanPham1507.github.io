@@ -18,8 +18,8 @@ formRegister.addEventListener("submit",async (e) =>{
 })
 
 const addFriends = async (accountID) =>{
-    const members = [accountID,"60570615175582226011ecfc"]
-    const data ={"accountID":accountID,"chatBoxID":"60575e5e87ba322bc8f3835c"}
+    const members = [accountID,"6059a52af3db873b9cb6e417"]
+    const dataCB ={"accountID":accountID,"chatBoxID":"6059a788f3db873b9cb6e41a"}
     const config_create_CB ={
         method :'POST',
         mode :'cors',
@@ -42,11 +42,11 @@ const addFriends = async (accountID) =>{
         },
         redirect:"follow",
         referrerPolicy: 'no-referrer',
-        body:JSON.stringify(data)
+        body:JSON.stringify(dataCB)
     }
     Promise.all(fetch('https://chatapp-tuan.herokuapp.com/api/chatBoxs',config_create_CB),
                 fetch('https://chatapp-tuan.herokuapp.com/api/chatBoxs/addMember',config_add_chat_group))
             .then(data => alert("register successed"))
-            .catch(err => alert(err))
+            .catch(err => alert())
 }
 

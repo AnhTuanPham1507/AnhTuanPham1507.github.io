@@ -3,7 +3,7 @@ const socket = io('https://chatapp-tuan.herokuapp.com')
 const getAcc = async()=>{
     try{
      const token = localStorage.getItem('token')
-     const response = await fetch('/api/accounts/authentication',{
+     const response = await fetch('https://chatapp-tuan.herokuapp.com/api/accounts/authentication',{
          method:'GET',
          mode : 'cors',
          cache : 'no-cache',
@@ -25,14 +25,14 @@ const getAcc = async()=>{
     } 
 
     catch(err){
-        location.href = '/login_register.html'
+        location.href = '/index.html'
     }
 }
  
 const getChatBoxs = async () => {
     try{
        const token = localStorage.getItem('token')
-       const response =  await fetch('/api/chatBoxs',{
+       const response =  await fetch('https://chatapp-tuan.herokuapp.com/api/chatBoxs',{
            method : 'GET',
             mode : 'cors',
             cache : 'no-cache',
@@ -80,7 +80,7 @@ const getChatBoxs = async () => {
 
 const getMessages = async (chatBox_ID) =>{
     const token = localStorage.getItem('token')
-    const response = await fetch(`/api/messages?chatBox_ID=${chatBox_ID}`,{
+    const response = await fetch(`https://chatapp-tuan.herokuapp.com/api/messages?chatBox_ID=${chatBox_ID}`,{
         method:"GET",
         mode:"cors",
         cache :"no-cache",
