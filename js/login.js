@@ -31,7 +31,7 @@ async function login(e){
         body:JSON.stringify({email,password})
     }
 
-    const response = await fetch('/api/accounts/authentication',config)
+    const response = await fetch('https://chatapp-tuan.herokuapp.com/api/accounts/authentication',config)
 
     if(response.status !== 400){
         const token = await response.text();
