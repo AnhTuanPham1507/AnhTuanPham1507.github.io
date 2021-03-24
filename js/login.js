@@ -24,7 +24,8 @@ async function login(e){
         cache : 'no-cache',
         credentials: 'same-origin',
         headers:{
-            'Content-Type':'application/json'
+            'Content-Type':'application/json',
+	    'origin':'https://anhtuanpham1507.github.io'
         },
         redirect:"follow",
         referrerPolicy: 'no-referrer',
