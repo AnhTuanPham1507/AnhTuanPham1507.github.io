@@ -56,7 +56,7 @@ const getChatBoxs = async () => {
                 content += `<li id="${res["_chatBox"]._id}" onclick="activeChatBox(this)">
                     <div class="d-flex bd-highlight">
                         <div class="img_cont">
-                            <img src="./img/${res.avatar}" class="rounded-circle user_img">
+                            <img src="https://res.cloudinary.com/anhtuanpham1507/image/upload/v1616603933/${res.avatar}" class="rounded-circle user_img">
                             <span class="online_icon offline"></span>
                         </div>
                         <div class="user_info">
@@ -111,7 +111,7 @@ const check_login = async() =>{
     const acc = {_id:account._id,name:account.name,avatar:account.avatar}
     localStorage.setItem('acc',JSON.stringify(acc))
     document.getElementById('account').innerText = `${account.name}`
-    document.getElementById('user-avatar').setAttribute('src',`./img/${acc.avatar}`)
+    document.getElementById('user-avatar').setAttribute('src',`https://res.cloudinary.com/anhtuanpham1507/image/upload/v1616603933/${acc.avatar}`)
 }
 
 const writeMessages = (chatBox_ID) => {
@@ -149,7 +149,7 @@ const create_my_message = ({message,time,avatar}) => {
     const content =`
     <div class="d-flex justify-content-start mb-4">
         <div class="img_cont_msg">
-            <img src="./img/${avatar}" class="rounded-circle user_img_msg">
+            <img src="https://res.cloudinary.com/anhtuanpham1507/image/upload/v1616603933/${avatar}" class="rounded-circle user_img_msg">
         </div>
         <div class="msg_cotainer">
             ${message}
@@ -165,7 +165,7 @@ const create_parter_message = ({message,time,avatar})=>{
     const content =`
     <div class="d-flex justify-content-end mb-4">
         <div class="img_cont_msg">
-            <img src="./img/${avatar}" class="rounded-circle user_img_msg">
+            <img src="https://res.cloudinary.com/anhtuanpham1507/image/upload/v1616603933/${avatar}" class="rounded-circle user_img_msg">
         </div>
         <div class="msg_cotainer_send">
             ${message}
@@ -293,10 +293,10 @@ const create_my_messageImage=({image,time,avatar})=>{
     const content =`
     <div class="d-flex justify-content-start mb-4">
         <div class="img_cont_msg">
-            <img src="./img/${avatar}" class="rounded-circle user_img_msg">
+            <img src="https://res.cloudinary.com/anhtuanpham1507/image/upload/v1616603933/${avatar}" class="rounded-circle user_img_msg">
         </div>
         <div class="image_cotainer_send">
-            <img src="./img/${image}" alt="${image}" width="150" height="150"/>
+            <img src="https://res.cloudinary.com/anhtuanpham1507/image/upload/v1616603933/${image}" alt="${image}" width="150" height="150"/>
             <br>
             <span class="msg_time_send"> ${time}</span>
         </div>
@@ -309,10 +309,10 @@ const create_parter_messageImage = ({image,time,avatar})=>{
     const content =`
     <div class="d-flex justify-content-end mb-4">
         <div class="img_cont_msg">
-            <img src="./img/${avatar}" class="rounded-circle user_img_msg">
+            <img src="https://res.cloudinary.com/anhtuanpham1507/image/upload/v1616603933/${avatar}" class="rounded-circle user_img_msg">
         </div>
         <div class="image_cotainer_send">
-            <img src="./img/${image}" alt="${image}" width="150" height="150"/>
+            <img src="https://res.cloudinary.com/anhtuanpham1507/image/upload/v1616603933/${image}" alt="${image}" width="150" height="150"/>
             <br>
             <span class="msg_time_send"> ${time}</span>
         </div>
