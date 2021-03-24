@@ -1,4 +1,6 @@
-const socket = io('https://chatapp-tuan.herokuapp.com')
+const socket = io('https://chatapp-tuan.herokuapp.com',{
+    withCredentials:true
+})
 const peer = new Peer({host:'peerjs-server.herokuapp.com', secure:true, port:443})
 const videoGrid = document.getElementById('video-grid')
 const peers = {}
