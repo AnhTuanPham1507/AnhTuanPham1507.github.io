@@ -1,4 +1,6 @@
-const socket = io('https://chatapp-tuan.herokuapp.com')
+const socket = io('https://chatapp-tuan.herokuapp.com',{
+    withCredentials:true
+})
 // loading document page and socket io
 const getAcc = async()=>{
     try{
