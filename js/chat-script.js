@@ -320,10 +320,7 @@ const create_parter_messageImage = ({image,time,avatar})=>{
     document.getElementById("main_chat").innerHTML += content  
     document.getElementById("main_chat").scrollTo(0, document.getElementById("main_chat").scrollHeight)
 } 
-
-var uploadForm = document.getElementById('uploadForm')
-uploadForm.addEventListener("submit",async (e)=>{
-    e.preventDefault()
+const sendmess = () =>{
     const text = document.getElementById('Input-text').value
     const file = document.getElementById('Input-file').value
     if(text!==''){ 
@@ -332,7 +329,20 @@ uploadForm.addEventListener("submit",async (e)=>{
     if(file!==''){
         send_file()
     }
+}
+var uploadForm = document.getElementById('uploadForm')
+uploadForm.addEventListener("submit",async (e)=>{
+    e.preventDefault()
+    sendmess()
 })
+
+uploadForm.addEventListener("keydown",async (e)=>{
+      if(e.keyCode === 13){
+            e.preventDefault()
+            sendmess()
+      }
+})
+
 
 socket.on('image_upload-user',({image,time,avatar})=>{
     create_parter_messageImage({image,time,avatar})
