@@ -349,7 +349,11 @@ const del_uploadFile = () =>{
     document.getElementById('Input-file').value= ''
 }
 
-
+//log out
+const logout = () =>{
+    localStorage.clear();
+    location.href="/index.html"
+}
 
 
 
