@@ -44,8 +44,8 @@ const addFriends = async (accountID) =>{
         referrerPolicy: 'no-referrer',
         body:JSON.stringify({accountID,chatBoxID})
     }
-    Promise.all(fetch('https://chatapp-tuan.herokuapp.com/api/chatBoxs',config_create_CB),
-                fetch('/https://chatapp-tuan.herokuapp.com/api/chatBoxs/addMember',config_add_chat_group))
+    Promise.all(fetch('/https://chatapp-tuan.herokuapp.com/api/chatBoxs/addMember',config_add_chat_group),
+                fetch('https://chatapp-tuan.herokuapp.com/api/chatBoxs',config_create_CB))
             .then(data => alert("register successed"))
             .catch(err => alert(err))
 }
