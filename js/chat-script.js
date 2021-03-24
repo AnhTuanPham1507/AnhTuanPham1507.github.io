@@ -18,7 +18,7 @@ const getAcc = async()=>{
      console.log(response.status)
      if(response.status === 400){
          console.log("aaa")
-         location.href = '/login_register.html'
+         location.href = '/index.html'
      }
      else{
         const acc = await response.json()
@@ -27,7 +27,7 @@ const getAcc = async()=>{
     } 
 
     catch(err){
-        location.href = '/login_register.html'
+        location.href = '/index.html'
     }
 }
  
