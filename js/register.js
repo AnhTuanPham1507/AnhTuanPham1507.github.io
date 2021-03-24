@@ -19,7 +19,7 @@ formRegister.addEventListener("submit",async (e) =>{
 
 const addFriends = async (accountID) =>{
     const members = [accountID,"605aa6761cda143040638fb0"]
-    const dataCB ={"accountID":accountID,"chatBoxID":"605aa6dc1cda143040638fb4"}
+    const dataCB ={"accountID":accountID,"chatBoxID":"605aa6da1cda143040638fb3"}
     const config_create_CB ={
         method :'POST',
         mode :'cors',
