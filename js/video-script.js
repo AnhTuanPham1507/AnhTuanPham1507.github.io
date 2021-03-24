@@ -1,9 +1,9 @@
+const socket = io('https://chatapp-tuan.herokuapp.com')
 const peer = new Peer({host:'peerjs-server.herokuapp.com', secure:true, port:443})
 const videoGrid = document.getElementById('video-grid')
 const peers = {}
-const socket = io('https://chatapp-tuan.herokuapp.com')
 
-navigator.mediaDevices.getUserMedia({video:true,audio:true})
+navigator.mediaDevices.getUserMedia({video:false,audio:true})
          .then(stream => {
             const myVideo = document.createElement('video')
             addVideoStream(myVideo,stream)

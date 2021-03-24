@@ -15,17 +15,19 @@ const getAcc = async()=>{
          redirect:'follow',
          referrerPolicy:'no-referrer'
      })
-
+     console.log(response.status)
      if(response.status === 400){
+         console.log("aaa")
          location.href = '/login_register.html'
      }
-
-     const acc = await response.json()
-     return acc
+     else{
+        const acc = await response.json()
+        return acc
+     }
     } 
 
     catch(err){
-        location.href = '/index.html'
+        location.href = '/login_register.html'
     }
 }
  
