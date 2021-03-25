@@ -1,7 +1,15 @@
 const socket = io('https://chatapp-tuan.herokuapp.com',{
     withCredentials:true
 })
-const peer = new Peer({host:'peerjs-server.herokuapp.com', secure:true, port:443})
+const peer = new Peer({
+    host:'peerjs-server.herokuapp.com', 
+    secure:true, 
+    port:443,
+    config: {'iceServers': [
+        { url: 'stun:stun.l.google.com:19302' },
+        { url: 'turn:homeo@turn.bistri.com:80', credential: 'homeo' }
+   ]}
+})
 const videoGrid = document.getElementById('video-grid')
 const peers = {}
 
