@@ -13,7 +13,7 @@ formRegister.addEventListener("submit",async (e) =>{
     }
     else{
         const err = await response.json()
-        alert("register successed")
+        alert(err)
     }    
 })
 
