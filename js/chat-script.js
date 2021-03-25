@@ -17,9 +17,7 @@ const getAcc = async()=>{
          redirect:'follow',
          referrerPolicy:'no-referrer'
      })
-     console.log(response.status)
      if(response.status === 400){
-         console.log("aaa")
          location.href = '/index.html'
      }
      else{
