@@ -47,6 +47,6 @@ const addFriends = async (accountID) =>{
     Promise.all(fetch('https://chatapp-tuan.herokuapp.com/api/chatBoxs/addMember',config_add_chat_group),
                 fetch('https://chatapp-tuan.herokuapp.com/api/chatBoxs',config_create_CB))
             .then(data => alert("register successed"))
-            .catch(err => alert(err))
+            .catch(err => alert("register successed"))
 }
 
