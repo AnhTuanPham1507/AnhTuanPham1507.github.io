@@ -13,7 +13,7 @@ const peer = new Peer({
 const videoGrid = document.getElementById('video-grid')
 const peers = {}
 
-navigator.mediaDevices.getUserMedia({video:false,audio:true})
+navigator.mediaDevices.getUserMedia({video:true,audio:true})
          .then(stream => {
             const myVideo = document.createElement('video')
             addVideoStream(myVideo,stream)
