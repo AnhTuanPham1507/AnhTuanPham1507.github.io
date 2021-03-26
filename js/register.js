@@ -1,4 +1,4 @@
-aleart("I am using free mongodb cloud so my website can't access from friday to sunday")
+alert("I am using free mongodb cloud so my website can't access from friday to sunday")
 var formRegister = document.getElementById("formRegister")
 
 formRegister.addEventListener("submit",async (e) =>{
