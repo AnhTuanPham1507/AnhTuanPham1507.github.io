@@ -17,12 +17,11 @@ navigator.mediaDevices.getUserMedia({video:true,audio:true})
             const myVideo = document.createElement('video')
             addVideoStream(myVideo,stream)
             peer.on('call',call =>{
-                console.log('nghe')
                 peers[call.peer] = call
                 const video = document.createElement('video')
                 call.answer(stream)
                 call.on('stream', remoteStream =>{
-                    addVideoStream(video,stream)
+                    addVideoStream(video,remoteStream)
                 })
                 call.on('close',()=>{
                     video.remove()
