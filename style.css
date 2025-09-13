@@ -435,6 +435,7 @@ body {
     gap: 2.5rem;
     max-width: 2000px;
     margin: 3rem 0;
+    justify-items: center;
 }
 
 .memory-card {
@@ -446,6 +447,11 @@ body {
     transition: all 0.4s ease;
     cursor: pointer;
     animation: cardFloat 4s ease-in-out infinite;
+    width: 100%;
+    max-width: 380px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
 }
 
 .memory-card:nth-child(even) {
@@ -464,7 +470,7 @@ body {
 
 .memory-image {
     width: 100%;
-    height: 250px;
+    height: 280px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     display: flex;
     align-items: center;
@@ -474,6 +480,7 @@ body {
     text-align: center;
     position: relative;
     overflow: hidden;
+    flex-shrink: 0;
 }
 
 .memory-image::before {
@@ -498,6 +505,11 @@ body {
     color: #fff;
     font-size: 1.2rem;
     font-style: italic;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
 }
 
 /* Section 4: Wish Upon a Star */
@@ -1138,47 +1150,352 @@ body {
     animation: giftOpenSuccess 1s ease-in-out;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .hero-title { font-size: 3rem; }
-    .section-title { font-size: 2.5rem; }
+/* Enhanced Responsive Design */
+
+/* Extra small devices (phones, 480px and down) */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+    
+    /* Navigation - Better mobile layout */
+    .nav {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .nav-btn {
+        padding: 10px 12px;
+        font-size: 1rem;
+        min-width: 44px;
+        min-height: 44px;
+    }
+    
+    /* Sections - Better mobile padding */
+    .section {
+        padding: 2rem 1rem;
+        min-height: 100vh;
+    }
+    
+    /* Hero section - Very small screens */
+    .hero-title { 
+        font-size: 2.2rem; 
+        margin-bottom: 2rem;
+        line-height: 1.2;
+        padding: 0 1rem;
+    }
+    
+    .hero-content {
+        padding: 1rem;
+    }
+    
+    /* Countdown - Stack vertically on very small screens */
+    .countdown-container { 
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem; 
+        margin: 2rem 0;
+    }
+    
+    .countdown-item { 
+        width: 80px; 
+        height: 80px;
+        border-radius: 15px;
+    }
+    
+    .countdown-number { 
+        font-size: 1.5rem; 
+        margin-bottom: 0.3rem;
+    }
+    
+    .countdown-label { 
+        font-size: 0.8rem; 
+    }
+    
+    /* Section titles */
+    .section-title { 
+        font-size: 2rem; 
+        margin-bottom: 2rem;
+        text-align: center;
+        padding: 0 1rem;
+        line-height: 1.3;
+    }
+    
+    /* Memory grid - Single column */
+    .memory-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin: 2rem 0;
+    }
+    
+    .memory-card {
+        margin: 0 auto;
+        max-width: 320px;
+        min-height: 350px;
+    }
+    
+    .memory-image {
+        height: 220px;
+    }
+    
+    .memory-caption {
+        padding: 1.5rem;
+        font-size: 1rem;
+        min-height: 100px;
+    }
+    
+    /* About section */
+    .about-card {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+    
+    .about-avatar {
+        width: 100px;
+        height: 100px;
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .about-bio {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1.2rem;
+    }
+    
+    .about-badges {
+        gap: 0.5rem;
+        margin: 1rem 0;
+    }
+    
+    .badge {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+    
+    /* Wish section */
+    .wish-input { 
+        min-width: 280px;
+        width: calc(100% - 2rem);
+        max-width: 350px;
+        padding: 20px 25px;
+        font-size: 1.1rem;
+        margin: 1rem;
+    }
+    
+    .magic-btn {
+        padding: 15px 25px;
+        font-size: 1.1rem;
+        margin: 1rem;
+    }
+    
+    .wish-display {
+        font-size: 1.2rem;
+        padding: 1.2rem 1.5rem;
+        margin: 0 1rem;
+        max-width: calc(100% - 2rem);
+    }
+    
+    /* Birthday overlay */
+    .gift-box {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .gift-base {
+        width: 80px;
+        height: 60px;
+    }
+    
+    .gift-lid {
+        width: 88px;
+        height: 40px;
+        left: -4px;
+        top: -20px;
+    }
+    
+    .gift-text {
+        font-size: 1rem;
+        margin-top: 0.5rem;
+    }
+    
+    .birthday-video-container {
+        width: 98%;
+        padding: 0 5px;
+    }
+    
+    /* Video controls */
+    .video-mute-btn {
+        top: 15px;
+        left: 15px;
+        padding: 8px 12px;
+        font-size: 1rem;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 481px) and (max-width: 576px) {
+    .nav {
+        gap: 10px;
+    }
+    
+    .hero-title { 
+        font-size: 2.8rem; 
+    }
+    
+    .section-title { 
+        font-size: 2.3rem; 
+    }
+    
+    .countdown-container { 
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.2rem; 
+    }
+    
+    .countdown-item { 
+        width: 90px; 
+        height: 90px; 
+    }
+    
+    .countdown-number { 
+        font-size: 1.8rem; 
+    }
+    
+    .memory-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+    
+    .memory-card {
+        min-height: 380px;
+    }
+    
+    .memory-image {
+        height: 260px;
+    }
+    
+    .wish-input { 
+        min-width: 320px;
+        padding: 25px 30px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 577px) and (max-width: 768px) {
+    .hero-title { 
+        font-size: 3.2rem; 
+    }
+    
+    .section-title { 
+        font-size: 2.8rem; 
+    }
+    
     .countdown-container { 
         flex-wrap: wrap; 
-        gap: 1rem; 
+        gap: 1.5rem; 
     }
+    
     .countdown-item { 
         width: 100px; 
         height: 100px; 
     }
-    .countdown-number { font-size: 2rem; }
-    .love-message { font-size: 1.8rem; padding: 1.5rem; }
-    .wish-input { min-width: 280px; }
+    
+    .countdown-number { 
+        font-size: 2rem; 
+    }
+    
+    .memory-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+    
+    .memory-card {
+        min-height: 400px;
+    }
+    
+    .love-message { 
+        font-size: 1.8rem; 
+        padding: 1.5rem; 
+    }
+    
+    .wish-input { 
+        min-width: 350px;
+        padding: 30px 40px;
+    }
+    
     .wish-display {
         font-size: 1.5rem;
         padding: 1.5rem 2rem;
     }
     
-    .gift-box {
-        width: 100px;
-        height: 100px;
+    .about-stats { 
+        grid-template-columns: 1fr; 
+        gap: 1rem;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 769px) and (max-width: 991px) {
+    .memory-grid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2.2rem;
     }
     
-    .gift-base {
-        width: 100px;
-        height: 70px;
+    .memory-card {
+        min-height: 400px;
     }
     
-    .gift-lid {
-        width: 110px;
-        left: -5px;
+    .about-stats { 
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+/* General mobile optimizations */
+@media (max-width: 768px) {
+    /* Touch-friendly interactions */
+    .memory-card:hover {
+        transform: scale(1.02);
     }
     
-    .gift-text {
-        font-size: 1.2rem;
+    .countdown-item:hover {
+        transform: translateY(-2px) scale(1.03);
     }
     
-    .birthday-video-container {
-        width: 95%;
-        padding: 0 10px;
+    /* Better mobile text readability */
+    .love-message {
+        line-height: 1.6;
+    }
+    
+    .about-bio {
+        line-height: 1.7;
+    }
+    
+    /* Mobile-friendly particle effects */
+    .particle {
+        width: 3px;
+        height: 3px;
+    }
+    
+    /* Optimized animations for mobile performance */
+    .hero-title {
+        animation: titlePulse 4s ease-in-out infinite;
+    }
+    
+    .floating-heart {
+        animation-duration: 5s;
+    }
+    
+    /* Better modal positioning */
+    .birthday-overlay.active {
+        padding: 1rem;
+    }
+    
+    .gift-container {
+        padding: 1rem;
     }
 }

@@ -44,7 +44,7 @@ function initParticles() {
 
 // Countdown timer
 function updateCountdown() {
-    const birthday = new Date('2025-09-13T21:30:00'); // Change this date!
+    const birthday = new Date('2025-09-14T09:00:00'); // Change this date!
     const now = new Date();
     
     const diff = birthday - now;
