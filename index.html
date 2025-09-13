@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday My Love! 💖</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <audio id="bg-music" autoplay muted playsinline>
+        <source src="./assets/bg_audio.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- Animated background -->
+    <div class="animated-bg"></div>
+
+    <!-- Magic particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Navigation -->
+    <div class="nav">
+        <button class="nav-btn" onclick="scrollToSection(0)" title="Home">🏠</button>
+        <button class="nav-btn" onclick="scrollToSection(1)" title="Memories">📸</button>
+        <button class="nav-btn" onclick="scrollToSection(3)" title="Wishes">⭐</button>
+        <button class="nav-btn" onclick="scrollToSection(4)" title="About Her">💖</button>
+    </div>
+
+    <!-- Section 1: Hero with Video & Countdown -->
+    <section class="section hero-section" id="section0">
+        <video class="hero-video" id="displayVideo" src="./assets/bg_video.mp4" autoplay muted loop playsinline></video>
+
+        <button class="video-mute-btn" id="videoToggleMute" title="Unmute video">🔇</button>
+
+        <div class="hero-content">
+            <h1 class="hero-title" onclick="createExplosion(event)">
+                ✨ Happy Birthday My Love! ✨
+            </h1>
+
+            <div class="countdown-container">
+                <div class="countdown-item" data-index="0">
+                    <div class="countdown-number" id="days">00</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-item" data-index="1">
+                    <div class="countdown-number" id="hours">00</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-item" data-index="2">
+                    <div class="countdown-number" id="minutes">00</div>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-item" data-index="3">
+                    <div class="countdown-number" id="seconds">00</div>
+                    <div class="countdown-label">Seconds</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: About My Girlfriend -->
+    <section class="section about-section" id="section4">
+        <h2 class="section-title">Mữn Mữn là ai? 💕</h2>
+
+        <div class="about-card reveal">
+            <div class="about-avatar" aria-label="Profile photo">💗</div>
+            <p class="about-bio">
+                <i style="font-style: italic; font-weight: bold;">Bạn hỏi thì tui xin trả lời:</i> <br />"Cô ấy là một
+                người xinh
+                đẹp, dịu dàng và tính tế, đôi lúc rất lì đòn
+                nhưng đối
+                với tôi
+                từ khi gặp cô ấy tôi cảm thấy như sống là chính mình, được sống, được yêu và hạnh phúc"
+            </p>
+
+            <div class="about-badges">
+                <span class="badge">🌹 Sinh đẹp</span>
+                <span class="badge">🎨 Tinh tế</span>
+                <span class="badge">🌟 Tỏa sáng</span>
+                <span class="badge">💫 Lì đòn</span>
+            </div>
+
+            <div class="about-stats">
+                <div class="stat reveal">
+                    <div class="stat-number" data-target="25">0</div>
+                    <div class="stat-label">Tủi xuân</div>
+                </div>
+                <div class="stat reveal">
+                    <div class="stat-number" data-target="2">0</div>
+                    <div class="stat-label">Năm bên nhau</div>
+                </div>
+                <div class="stat reveal">
+                    <div class="stat-number" data-target="1000000000">0</div>
+                    <div class="stat-label">Tình yêu</div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- Section 3: Memory Gallery -->
+    <section class="section memory-section" id="section1">
+        <h2 class="section-title">Những chuyến phiêu lưu ký 📸</h2>
+
+        <div class="memory-grid">
+            <div class="memory-card" onclick="memoryEffect(this)">
+                <div class="memory-image">
+                    <img style="width: 100%; height: 100%; object-fit: cover;" src="./assets/images/304.jpg"
+                        alt="Memory 1">
+                </div>
+                <div class="memory-caption">
+                    "Yêu nước nồng nàng
+                    <br>
+                    yêu nàng vô biên"
+                </div>
+            </div>
+            <div class="memory-card" onclick="memoryEffect(this)">
+                <div class="memory-image">
+                    <img style="width: 100%; height: 100%; object-fit: cover;" src="./assets/images/da_lat_1.jpg"
+                        alt="Memory 3">
+                </div>
+                <div class="memory-caption">
+                    "Tổng tài bá đạo và cô hầu gái yếu ớt"
+                </div>
+            </div>
+            <div class="memory-card" onclick="memoryEffect(this)">
+                <div class="memory-image">
+                    <img style="width: 100%; height: 100%; object-fit: cover;" src="./assets/images/da_lat_2.jpg"
+                        alt="Memory 3">
+                </div>
+                <div class="memory-caption">
+                    "Nhìn nhìn xin 10 nghìn"
+                </div>
+            </div>
+            <div class="memory-card" onclick="memoryEffect(this)">
+                <div class="memory-image">
+                    <img style="width: 100%; height: 100%; object-fit: cover;" src="./assets/images/sinh_nhat.jpg"
+                        alt="Memory 3">
+                </div>
+                <div class="memory-caption">
+                    "Tủi xuân 24 cùng nàng ther nè"
+                </div>
+            </div>
+            <div class="memory-card" onclick="memoryEffect(this)">
+                <div class="memory-image">
+                    <img style="width: 100%; height: 100%; object-fit: cover;" src="./assets/images/xuan_2.jpg"
+                        alt="Memory 3">
+                </div>
+                <div class="memory-caption">
+                    "Ánh mắt si tình của kẻ đang yêu"
+                </div>
+            </div>
+            <div class="memory-card" onclick="memoryEffect(this)">
+                <div class="memory-image">
+                    <img style="width: 100%; height: 100%; object-fit: cover;" src="./assets/images/phu_yen_4.jpg"
+                        alt="Memory 3">
+                </div>
+                <div class="memory-caption">
+                    "Nheo mắt vì nắng, không phải tạo kiểu"
+                </div>
+            </div>
+            <div class="memory-card" onclick="memoryEffect(this)">
+                <div class="memory-image">
+                    <img style="width: 100%; height: 100%; object-fit: cover;" src="./assets/images/phu_yen_2.jpg"
+                        alt="Memory 3">
+                </div>
+                <div class="memory-caption">
+                    "Môi hở răng lạnh của nàng đây"
+                </div>
+            </div>
+            <div class="memory-card" onclick="memoryEffect(this)">
+                <div class="memory-image">
+                    <img style="width: 100%; height: 100%; object-fit: cover;" src="./assets/images/phu_yen_5.jpg"
+                        alt="Memory 3">
+                </div>
+                <div class="memory-caption">
+                    "Biển và nàng"
+                </div>
+            </div>
+            <div class="memory-card" onclick="memoryEffect(this)">
+                <div class="memory-image">
+                    <img style="width: 100%; height: 100%; object-fit: cover;" src="./assets/images/phu_yen_6.jpg"
+                        alt="Memory 3">
+                </div>
+                <div class="memory-caption">
+                    "Nhìn thì đang chill nhưng mệt thở văng cả biển =)))"
+                </div>
+            </div>
+            <div class="memory-card" onclick="memoryEffect(this)">
+                <div class="memory-image">
+                    <img style="width: 100%; height: 100%; object-fit: cover;" src="./assets/images/dua_xe.jpg"
+                        alt="Memory 3">
+                </div>
+                <div class="memory-caption">
+                    "Đua xe mở rộng, giải bình sữa vàng"
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section 4: Wish Upon a Star -->
+    <section class="section wish-section" id="section3">
+        <div class="shooting-stars">
+            <div class="shooting-star" style="top: 20%; animation-delay: 0s;"></div>
+            <div class="shooting-star" style="top: 40%; animation-delay: 1.5s;"></div>
+            <div class="shooting-star" style="top: 60%; animation-delay: 3s;"></div>
+        </div>
+
+        <div class="wish-container">
+            <h2 class="section-title">Ta sẽ cho con một điều ước<br />hãy ước đi nào ⭐
+            </h2>
+
+            <input type="text" class="wish-input" placeholder="Nhập điều ước của ở đây..." id="wishInput">
+
+            <br>
+
+            <button class="magic-btn" onclick="makeWish()">
+                Gửi đến cho Anh Tứn đẹp trai ⭐
+            </button>
+        </div>
+    </section>
+
+    <!-- Birthday Surprise Overlay -->
+    <div class="birthday-overlay" id="birthdayOverlay">
+        <div class="gift-container" id="giftContainer">
+            <div class="gift-box" id="giftBox">
+                <div class="gift-lid">
+                    <div class="gift-ribbon-vertical"></div>
+                    <div class="gift-bow">
+                        <div class="bow-left"></div>
+                        <div class="bow-right"></div>
+                        <div class="bow-center"></div>
+                    </div>
+                </div>
+                <div class="gift-base">
+                    <div class="gift-ribbon-horizontal"></div>
+                </div>
+                <div class="gift-glow"></div>
+            </div>
+            <div class="gift-text">🎁 Vừng ơi mở ra! 🎁</div>
+        </div>
+
+        <!-- Birthday Video Player -->
+        <div class="birthday-video-container" id="birthdayVideoContainer">
+            <video id="birthday-video" id="birthdayVideo" controls>
+                <!-- Video source will be added dynamically -->
+                <source src="./assets/birthday_video.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <script defer src="script.js"></script>
+</body>
+
+</html>
